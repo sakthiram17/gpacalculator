@@ -1,23 +1,33 @@
 import logo from './logo.svg';
 import './App.css';
-
+import GpaCalc from './GpaCalc';
+import Navbar from './Navbar';
+import CourseGrade from './CourseGrade';
+import PassingMarksCalc from './PassingMarksCalc';
+import CGPACalc from './CGPACalc';
+import { useState } from 'react';
 function App() {
+let [output,setoutput] = useState(<GpaCalc></GpaCalc>)
+let [change,makeChange] = useState(true);
+const handlePageChange = (pagechoice)=>
+{
+  if(pagechoice ==1)
+  {
+    setoutput(<GpaCalc></GpaCalc>)
+  }
+  else if(pagechoice==2)
+  {
+  setoutput(<PassingMarksCalc></PassingMarksCalc>)
+  }
+  else{
+  setoutput(<CGPACalc></CGPACalc>)
+  }
+
+}
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar click= {handlePageChange}></Navbar>
+    {output}
     </div>
   );
 }

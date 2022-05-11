@@ -1,7 +1,9 @@
 .App {
   text-align: center;
 }
-
+*{
+  font-size: 20px;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -36,3 +38,164 @@
     transform: rotate(360deg);
   }
 }
+.btngrp{
+  padding: 20x;
+}
+.btn{
+  padding: 20px;
+  border: none;
+  color:black;
+  background-color: whitesmoke;
+  border-radius: 5px;
+  box-shadow: 0 3px 4px #ccc;
+  margin: 20px;
+}
+.btn:hover{
+  opacity: 0.8;
+  font-size: 1.2em;
+  background-color:black;
+  color:white;
+}
+.btn:active{
+  background-color: aquamarine;
+}
+.formgrp{
+  padding: 20px;
+  width: min(800px,80%);
+  align-items: center;
+  margin: auto;
+
+  border-radius: 20px;
+  margin-top: 20px;
+}
+.formelement{
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  font-weight: 800;
+  background-color: whitesmoke;
+  box-shadow: 0 3px 4px #ccc;
+
+}
+.subbtn{
+  background-color: #61dafb;
+  border: none;
+  transition: 0.15s;
+  color:white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 6px 8px #ccc;
+}
+.subbtn:hover{
+  background-color: black;
+  opacity: 0.8;
+  font-size: 1.2em;
+ 
+}
+.subbtn:active{
+  color:#61dafb;
+  box-shadow: none;
+}
+.row{
+  background-color: whitesmoke;
+  box-shadow: 0 3px 6px #ccc;
+  padding: 20px;
+  font-size: 20px;
+  font-weight: 800;
+  width: min(500px,80%);
+  margin: auto;
+  margin-top: 50px;
+  border-radius: 10px;
+}
+.Title{
+  font-weight: 800;
+  font-size: 30px;
+  padding: 20px;
+}
+.Navbar{
+  background-color: whitesmoke;
+  overflow: auto;
+  box-shadow: 0 3px 4px #ccc;
+}
+.Navbar li{
+  display: inline;
+  padding: 20px;
+  font-weight: 700;
+  font-size: 25px;
+  transition: 0.16s;
+  
+}
+.Navbar li:hover{
+  opacity: 0.8;
+  font-size: 1.2em;
+  color:white;
+  background-color:#61dafb;
+}
+html{
+  margin: 0px;
+}
+@media (max-width:900px) {
+  *{
+    font-size: 15px;
+  }
+  .Navbar li{
+    display: block;
+    font-size: 20px;
+    padding-left: 0px;
+    padding-right: 0px;
+    align-items: center;
+    width: 100%;
+ 
+
+  }
+  .Navbar ul{
+    margin: none;
+    text-align: center;
+    margin: auto;
+    margin-left: -40px;
+    width: 100%;
+  }
+  .Navbar{
+    width: 100%;
+  
+  }
+  .Navbar li:hover{
+    opacity: 0.8;
+    font-size: 1.5em;
+    color:white;
+    background-color:#61dafb;
+  }
+  select{
+    padding: 0px;
+  }
+}
+input[type="select"]
+{
+  border: solid red 2px;
+}
+select{
+   padding: 5px;
+   border-radius: 5px;
+  box-shadow: 0 3px 4px #ccc;
+}
+.pformelement{
+  padding: 20px;
+  font-size: 20px;
+  font-weight: 800;
+}
+.pformelement input[type="text"]{
+  margin:10px;
+  font-weight: 800;
+}
+input[type = "text"]
+{
+  padding: 10px;
+  align-items: center;
+ font-weight: 800;
+ }
+ .formelement{
+   width:min(800px,80%);
+   margin: auto;
+   margin-top: 20px;
+   margin-bottom: 20px;
+ }
