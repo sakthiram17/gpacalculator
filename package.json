@@ -1,7 +1,6 @@
 {
   "name": "gpacalc",
   "version": "0.1.0",
-  "private": true,
   "homepage": "https://sakthiram17.github.io/gpacalculator",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
