@@ -7,21 +7,20 @@ import PassingMarksCalc from './PassingMarksCalc';
 import CGPACalc from './CGPACalc';
 import { useState } from 'react';
 function App() {
-let [output,setoutput] = useState(<GpaCalc></GpaCalc>)
-let [change,makeChange] = useState(true);
-const handlePageChange = (pagechoice)=>
-{
-  if(pagechoice ==1)
+  let [output,setoutput] = useState(<GpaCalc></GpaCalc>)
+  const handlePageChange = (pagechoice)=>
   {
-    setoutput(<GpaCalc></GpaCalc>)
-  }
-  else if(pagechoice==2)
-  {
-  setoutput(<PassingMarksCalc></PassingMarksCalc>)
-  }
-  else{
-  setoutput(<CGPACalc></CGPACalc>)
-  }
+    if(pagechoice ==1)
+    {
+      setoutput(<GpaCalc></GpaCalc>)
+    }
+    else if(pagechoice==2)
+    {
+    setoutput(<PassingMarksCalc></PassingMarksCalc>)
+    }
+    else{
+    setoutput(<CGPACalc></CGPACalc>)
+    }
 
 }
   return (

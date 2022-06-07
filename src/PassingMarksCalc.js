@@ -7,8 +7,8 @@ const PassingMarksCalc = ()=>
      let DA1 = parseFloat(markslist[0].children[1].value)||0
      let DA2 = parseFloat(markslist[1].children[1].value)||0
      let DA3 = parseFloat(markslist[2].children[1].value)||0
-     let CAT1 = parseFloat(markslist[3].children[1].value)/2||0
-     let CAT2 = parseFloat(markslist[4].children[1].value)/2||0
+     let CAT1 = parseFloat(markslist[3].children[1].value)*0.3||0
+     let CAT2 = parseFloat(markslist[4].children[1].value)*0.3||0
      let total = DA1+DA2+DA3+CAT1+CAT2;
      if(50-total>16)
      {
@@ -21,7 +21,7 @@ const PassingMarksCalc = ()=>
      {
          alert("Enter valid Input")
      }
-     if(DA1>10 ||DA2>10||DA3>10||CAT1>30||CAT2>30)
+     if(DA1>10 ||DA2>10||DA3>10||CAT1>50||CAT2>50)
      {
          alert("Enter Valid Input")
      }
@@ -47,12 +47,12 @@ const PassingMarksCalc = ()=>
           <input type = "number" itemID="DA3" min = "0" max = "10"></input>
           </div>
           <div className="pformelement">
-          <label htmlFor="CAT1" className="plabel">CAT1 Marks(out of 30) :</label>    
-          <input type = "number" itemID="CAT1" min="0" max = "30"></input>
+          <label htmlFor="CAT1" className="plabel">CAT1 Marks(out of 50) :</label>    
+          <input type = "number" itemID="CAT1" min="0" max = "50"></input>
           </div>
           <div className="pformelement">
-          <label htmlFor="CAT2" className="plabel">CAT2 Marks (out of 30):</label>    
-          <input type = "number" itemID="CAT2" min = "0" max = "30"></input>
+          <label htmlFor="CAT2" className="plabel">CAT2 Marks (out of 50):</label>    
+          <input type = "number" itemID="CAT2" min = "0" max = "50"></input>
          </div>         
           </form>   
          </div>

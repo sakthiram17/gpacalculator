@@ -4,24 +4,26 @@ import React from "react";
 let  elements_list = [<Sems key = {2} id = {2}></Sems>];
 let id = 2;
 const CGPACalc = ()=>{
-  const [changemarker, setChange] = useState(true);
   const [newarr,changearr] = useState(<Sems key = {2} id = {2}></Sems>)
   const [cgpa,SetCgpa] = useState(null); 
   const removeSemHandler =()=>{
   if(id>=2)
     {id = id -1;
-    elements_list.pop();
-
-    changearr(elements_list);
-    }}
+        changearr(
+          (elements_list)=>{
+        return elements_list.pop()
+              }
+            );
+    }
+  }
   const AddSemHandler = ()=>
   {
     if(id<8)
     {
       id = id +1;
-      elements_list.push(<Sems key = {id} id = {id}></Sems>);
-      
-      changearr(elements_list);
+      changearr((elements_list)=>{
+      return elements_list.push(<Sems key = {id} id = {id}></Sems>);
+      });
     }
   }
     const calcCgpaHandler= ()=>{

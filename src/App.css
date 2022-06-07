@@ -38,8 +38,30 @@
     transform: rotate(360deg);
   }
 }
+.inlinebtn{
+  display: inline;
+  margin:0px;
+  padding: 20px;
+ 
+  border: none;
+  color:black;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  box-shadow: 0 3px 4px #ccc;
+  margin-left: 20%;
+}
+.inlinebtn:hover{
+  opacity: 0.8;
+  font-size: 1.2em;
+  background-color:black;
+  color:white;
+}
+.inlinebtn:active{
+  background-color: aquamarine;
+}
 .btngrp{
   padding: 20x;
+
 }
 .btn{
   padding: 20px;
@@ -75,7 +97,7 @@
   font-weight: 800;
   background-color: whitesmoke;
   box-shadow: 0 3px 4px #ccc;
-
+  display: inline-block;
 }
 .subbtn{
   background-color: #61dafb;
@@ -102,7 +124,7 @@
   padding: 20px;
   font-size: 20px;
   font-weight: 800;
-  width: min(500px,80%);
+  width: min(500px,70%);
   margin: auto;
   margin-top: 50px;
   border-radius: 10px;
@@ -199,3 +221,6 @@ input[type = "text"]
    margin-top: 20px;
    margin-bottom: 20px;
  }
+.gradechoose{
+  display: inline;
+}
