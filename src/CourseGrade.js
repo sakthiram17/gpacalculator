@@ -23,7 +23,7 @@ let PointToGradeConversion = {
 const CourseGrade = (props)=>{
  return (
     <React.Fragment>
-    <div className="formelement" id = {props.id}>
+    <div className="formelement" id = {props.id} style = {props.style}>
             <form className = "gradechoose">
             <label htmlFor="Grade">Grade </label>
             <select name="Grade" id="Grade" value = {gradeToPointConversion[props.grade]} 

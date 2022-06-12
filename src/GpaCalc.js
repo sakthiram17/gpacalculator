@@ -24,15 +24,39 @@ for(let i = 0;i<7;i++)
 }
 const GpaCalc = ()=>{
   const [course_list,setCourseList]  = useState([])
+  let DeleteAnimator = ()=>{};
+  
   const reducer = (state,action)=>{
     let temp;
     switch(action.type){
-      case 'ADD': temp = [...state]
-                  temp.push({id:uuid(),grade :'A',credits : 4})
+      case 'ADD_ANIM': temp = [...state]
+                  temp[temp.length-1].style= null;
                   return temp;
+      case 'ADD' :temp = [...state]
+                 temp.push({id:uuid(),grade :'A',credits : 4})
+                 temp[temp.length-1].style= {opacity:0.5,
+                  transform: "translateX(-40vw)",
+                  transform : "scale(0)"
+                };
+                 return temp;
       case 'DEL' : temp = [...state]
                   temp.pop()
                   return temp;
+      case 'DEL_ANIM' : temp = [...state]
+                        temp[temp.length-1].style= {opacity:0.5,
+                          transform: "translateX(-40vw)",
+                          transform : "scale(0.5)"
+                        };
+                  return temp;
+      case  'DELLOC_ANIM' : temp = [...state]
+                            let pos = temp.findIndex((ele)=>{
+                              return ele.id  === action.id
+                            })
+                            temp[pos].style =  {opacity:0.5,
+                              transform: "translateX(-40vw)",
+                              transform : "scale(0.5)"
+                            };
+                            return temp;
       case  'DELLOC': temp = [...state]
                       let newstate = []
                       newstate = temp.filter((ele)=>{
@@ -60,23 +84,36 @@ const GpaCalc = ()=>{
                       return dummy_state
     }
   }
+  
+  const [CourseList,dispatch] = useReducer(reducer,initial_value)
+  
   const simpleCourseAdder = ()=>{
     dispatch({type:'ADD'})
+    setTimeout(()=>{
+      dispatch({type:'ADD_ANIM'})
+    },200)
   }
-  const simpleCourseRemover = ()=>{
+  const simpleCourseRemover = async ()=>{
+    dispatch({type:'DEL_ANIM'})
+      setTimeout(()=>{
     dispatch({type:'DEL'})
+    },200)
   }
+  
   const changeHandler = (id,grade,credits)=>{
     dispatch({type:'ONCHANGE',id:id,grade:grade,credits:credits})
   }
   const deleteCourseHandler = (key)=>{
-    dispatch({type:'DELLOC',id:key})
+    dispatch({type:'DELLOC_ANIM',id:key})
+    setTimeout(()=>{
+      dispatch({type:'DELLOC',id:key})
+    },200)
+
   }
 
 
-  const [CourseList,dispatch] = useReducer(reducer,initial_value)
+
   
-    
   const [gpa,setGpa] = useState(null);
   const courselist = null;
 
@@ -107,8 +144,9 @@ const GpaCalc = ()=>{
             <div className="Title"> VIT GPA CALCULATOR</div>
             <div className = 'formgrp'>
             {CourseList.map((obj)=>{
-              return <CourseGrade  key = {obj.id} 
+              return <CourseGrade  key = {obj.id}
               onChange = {changeHandler}
+              style = {obj.style ||null}
               delete = {deleteCourseHandler} id = {obj.id} grade = {obj.grade} credits = {obj.credits}></CourseGrade>
             })}
             </div>

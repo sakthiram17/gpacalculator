@@ -92,12 +92,14 @@
 }
 .formelement{
   padding: 20px;
+  transition:translate,opacity,transform 0.2s;
   margin: 20px;
   border-radius: 10px;
   font-weight: 800;
   background-color: whitesmoke;
   box-shadow: 0 3px 4px #ccc;
-  display: inline-block;
+   display: inline-block;
+  
 }
 .subbtn{
   background-color: #61dafb;
@@ -189,6 +191,14 @@ html{
   }
   select{
     padding: 0px;
+    font-size: 12px;
+  }
+  .inlinebtn{
+    padding: 10px;
+    margin: auto;
+    margin-left: 6%;
+    border-radius: 5px;
+    vertical-align: middle;
   }
 }
 input[type="select"]
@@ -201,8 +211,8 @@ select{
   box-shadow: 0 3px 4px #ccc;
 }
 .pformelement{
-  padding: 20px;
-  font-size: 20px;
+  padding: 16px;
+  font-size: 16px;
   font-weight: 800;
 }
 .pformelement input[type="text"]{
@@ -223,4 +233,12 @@ input[type = "text"]
  }
 .gradechoose{
   display: inline;
+}
+.course-grade-hider{
+  opacity: 0.1;
+}
+@media(max-width:500px){
+  .formelement{
+    width: 95%;
+}
 }
