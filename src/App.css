@@ -141,15 +141,17 @@
   overflow: auto;
   box-shadow: 0 3px 4px #ccc;
 }
-.Navbar li{
+.Navbar-list-item{
   display: inline;
   padding: 20px;
   font-weight: 700;
   font-size: 25px;
   transition: 0.16s;
+  text-decoration: none;
+  color:black;
   
 }
-.Navbar li:hover{
+.Navbar-list-item:hover{
   opacity: 0.8;
   font-size: 1.2em;
   color:white;
@@ -162,7 +164,7 @@ html{
   *{
     font-size: 15px;
   }
-  .Navbar li{
+  .Navbar-list-item{
     display: block;
     font-size: 20px;
     padding-left: 0px;
@@ -183,7 +185,7 @@ html{
     width: 100%;
   
   }
-  .Navbar li:hover{
+  .Navbar-list-item:hover{
     opacity: 0.8;
     font-size: 1.5em;
     color:white;
@@ -241,4 +243,8 @@ input[type = "text"]
   .formelement{
     width: 95%;
 }
+}
+.active{
+  color:white;
+  background-color: #61dafb;
 }

@@ -19,7 +19,8 @@ for(let i = 0;i<7;i++)
   initial_value.push({
     id : uuid(),
     grade : 'A',
-    credits : "4"
+    credits : "4",
+    style:null
   })
 }
 const GpaCalc = ()=>{
@@ -28,6 +29,7 @@ const GpaCalc = ()=>{
   
   const reducer = (state,action)=>{
     let temp;
+    console.log(state)
     switch(action.type){
       case 'ADD_ANIM': temp = [...state]
                   temp[temp.length-1].style= null;
@@ -40,7 +42,9 @@ const GpaCalc = ()=>{
                 };
                  return temp;
       case 'DEL' : temp = [...state]
+                   temp[temp.length-1].style = null;
                   temp.pop()
+                  console.log("DELETION COMPLETE")
                   return temp;
       case 'DEL_ANIM' : temp = [...state]
                         temp[temp.length-1].style= {opacity:0.5,
@@ -59,6 +63,10 @@ const GpaCalc = ()=>{
                             return temp;
       case  'DELLOC': temp = [...state]
                       let newstate = []
+                      let index = temp.findIndex((ele)=>{
+                        return ele.id === action.id
+                      })
+                      temp[index].style = null;
                       newstate = temp.filter((ele)=>{
                         return ele.id !== action.id
                       })

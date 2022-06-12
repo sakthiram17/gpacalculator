@@ -6,28 +6,22 @@ import CourseGrade from './CourseGrade';
 import PassingMarksCalc from './PassingMarksCalc';
 import CGPACalc from './CGPACalc';
 import { useState } from 'react';
+import { BrowserRouter } from "react-router-dom";
+import {Routes,Route} from 'react-router-dom'
 function App() {
-  let [output,setoutput] = useState(<GpaCalc></GpaCalc>)
-  const handlePageChange = (pagechoice)=>
-  {
-    if(pagechoice ==1)
-    {
-      setoutput(<GpaCalc></GpaCalc>)
-    }
-    else if(pagechoice==2)
-    {
-    setoutput(<PassingMarksCalc></PassingMarksCalc>)
-    }
-    else{
-    setoutput(<CGPACalc></CGPACalc>)
-    }
-
-}
   return (
+    <BrowserRouter>
     <div className="App">
-      <Navbar click= {handlePageChange}></Navbar>
-    {output}
+      <Navbar>
+      </Navbar>
+      <Routes>
+        <Route  path = "/gpacalculator/" element = {<GpaCalc></GpaCalc>}></Route>
+        <Route  path = "gpacalculator/cgpa" element = {<CGPACalc></CGPACalc>}></Route>
+        <Route exact path = "gpacalculator/passcalc" element = {<PassingMarksCalc></PassingMarksCalc>}></Route>
+      </Routes>
+   
     </div>
+    </BrowserRouter>
   );
 }
 
