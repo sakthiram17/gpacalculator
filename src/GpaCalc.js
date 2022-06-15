@@ -35,7 +35,7 @@ const GpaCalc = ()=>{
               style:null
             })
           }
-
+          dispatch({type : 'REPLACE',state : initial_value})
     }
   },[])
   const saveState  = (currentState)=>{
