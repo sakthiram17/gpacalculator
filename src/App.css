@@ -8,7 +8,9 @@
   height: 40vmin;
   pointer-events: none;
 }
-
+.row{
+  display: block;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -98,8 +100,7 @@
   font-weight: 800;
   background-color: whitesmoke;
   box-shadow: 0 3px 4px #ccc;
-   display: inline-block;
-  
+   display: block;
 }
 .subbtn{
   background-color: #61dafb;

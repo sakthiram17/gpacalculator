@@ -14,25 +14,41 @@ let gradeToPointConversion = {
   E : '5',
   F : '0',
 }
-for(let i = 0;i<7;i++)
-{
-  initial_value.push({
-    id : uuid(),
-    grade : 'A',
-    credits : "4",
-    style:null
-  })
-}
+
 const GpaCalc = ()=>{
-  const [course_list,setCourseList]  = useState([])
   let DeleteAnimator = ()=>{};
-  
+  useEffect(()=>{
+    initial_value = []
+    let stateObj = JSON.parse(localStorage.getItem('stateString'))
+    console.log(stateObj)
+    if(stateObj)
+    {
+     dispatch({type : 'REPLACE',state : stateObj})
+    }
+    else{
+      for(let i = 0;i<7;i++)
+          {
+            initial_value.push({
+              id : uuid(),
+              grade : 'A',
+              credits : "4",
+              style:null
+            })
+          }
+
+    }
+  },[])
+  const saveState  = (currentState)=>{
+    let state_string = JSON.stringify(currentState);
+    localStorage.setItem('stateString',state_string)
+  }
   const reducer = (state,action)=>{
     let temp;
     console.log(state)
     switch(action.type){
       case 'ADD_ANIM': temp = [...state]
                   temp[temp.length-1].style= null;
+                  saveState(temp);
                   return temp;
       case 'ADD' :temp = [...state]
                  temp.push({id:uuid(),grade :'A',credits : 4})
@@ -40,17 +56,20 @@ const GpaCalc = ()=>{
                   transform: "translateX(-40vw)",
                   transform : "scale(0)"
                 };
+                saveState(temp);
                  return temp;
       case 'DEL' : temp = [...state]
                    temp[temp.length-1].style = null;
                   temp.pop()
                   console.log("DELETION COMPLETE")
+                  saveState(temp);
                   return temp;
       case 'DEL_ANIM' : temp = [...state]
                         temp[temp.length-1].style= {opacity:0.5,
                           transform: "translateX(-40vw)",
                           transform : "scale(0.5)"
                         };
+                        saveState(temp);
                   return temp;
       case  'DELLOC_ANIM' : temp = [...state]
                             let pos = temp.findIndex((ele)=>{
@@ -60,6 +79,7 @@ const GpaCalc = ()=>{
                               transform: "translateX(-40vw)",
                               transform : "scale(0.5)"
                             };
+                            saveState(temp);
                             return temp;
       case  'DELLOC': temp = [...state]
                       let newstate = []
@@ -70,6 +90,7 @@ const GpaCalc = ()=>{
                       newstate = temp.filter((ele)=>{
                         return ele.id !== action.id
                       })
+                      saveState(newstate);
                    return newstate
       case 'ONCHANGE':
                 
@@ -89,8 +110,11 @@ const GpaCalc = ()=>{
                         }
 
                       }
+                      saveState(dummy_state);
                       return dummy_state
+        case 'REPLACE' : return action.state
     }
+   
   }
   
   const [CourseList,dispatch] = useReducer(reducer,initial_value)
@@ -125,12 +149,7 @@ const GpaCalc = ()=>{
   const [gpa,setGpa] = useState(null);
   const courselist = null;
 
-   const removeCourseHandler = ()=>{
-     
-      let temp_list = [...course_list];
-      temp_list.pop()  
-      setCourseList(temp_list)
-    }
+  
     
     const CalculateGpa = ()=>{
         let gp = 0;

@@ -38,10 +38,9 @@ const CGPACalc = ()=>{
   }
 
   return(
-      <div>
+      <div className>
         <div className="Title"> VIT CGPA CALCULATOR</div>
         <div className="form">
-        </div>
       <Sems text ="Current CGPA " id = "prevcgpa"></Sems>
       <Sems text = "Completed Credits "></Sems>
       <Sems text ="Current Sem GPA " id = "cgpa"></Sems>
@@ -49,6 +48,7 @@ const CGPACalc = ()=>{
         <div className = "btngrp">
         <div className="submit">
             <button itemID="csubmit" onClick={calcCgpaHandler} className="subbtn">CalCulate CGPA</button>
+          </div>
           </div>
           </div>
           <div className="row">
