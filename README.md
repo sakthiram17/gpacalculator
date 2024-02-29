@@ -1,14 +1,13 @@
-# GPA Calculator Web Application
+# GPA Calculator App
 
 ![GPA Calculator](https://sakthiram17.github.io/gpacalculator/images/gpa_calculator.png)
 
 ## Overview
 
-This web application is a comprehensive GPA calculator designed for VITians, offering a range of features to assist in academic planning. The application includes four main pages:
+This web application is a GPA calculator built with React, tailored for VITians. It provides a user-friendly interface with advanced features for academic planning. The application consists of four main pages:
 
 1. **GPA Calculator:**
-   - Add and remove courses with ease.
-   - Super fluid animations for an engaging user experience.
+   - Easily manage courses with grades using intuitive buttons and enjoy fluid animations.
    - Provides the Grade Point Average (GPA) for the entered courses.
 
 2. **Passing Marks Calculator:**
@@ -22,11 +21,11 @@ This web application is a comprehensive GPA calculator designed for VITians, off
 
 ## Usage
 
-Visit the hosted application [here](https://sakthiram17.github.io/gpacalculator/) to start using the GPA calculator. Each page utilizes advanced forms with fluid animations and form validations to ensure a smooth user experience.
+Visit the hosted application [here](https://sakthiram17.github.io/gpacalculator/) to use the GPA calculator. Each page is implemented with React, utilizing advanced forms with fluid animations and form validations.
 
 ## Installation
 
-If you want to run the application locally or contribute to its development:
+If you want to run the React application locally or contribute to its development:
 
 1. Clone the repository:
    ```bash
@@ -38,7 +37,17 @@ If you want to run the application locally or contribute to its development:
    cd gpacalculator
    ```
 
-3. Open `index.html` in your preferred web browser or host it using a local server.
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+4. Start the development server:
+   ```bash
+   npm start
+   ```
+
+5. Open your browser and go to [http://localhost:3000](http://localhost:3000) to view the application.
 
 ## Features
 
@@ -61,4 +70,4 @@ For any inquiries, you can reach out to the author at sakthiram@example.com.
 
 ---
 
-**Note:** This web application is hosted at [https://sakthiram17.github.io/gpacalculator/](https://sakthiram17.github.io/gpacalculator/). Explore the different features and make your academic planning smoother!
+**Note:** This React application is hosted at [https://sakthiram17.github.io/gpacalculator/](https://sakthiram17.github.io/gpacalculator/). Explore the different features and make your academic planning smoother!
